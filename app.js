@@ -8,7 +8,7 @@ function Employee(identity,name,department,level,image){
     this.level=level;
     this.image=image;
 
-        
+
    
     allUsers.push(this);
    }
@@ -17,7 +17,7 @@ function Employee(identity,name,department,level,image){
 console.log(allUsers)
 
 
-    const ghazi= new Employee("1000 ","Ghazi Samer ","Administration ","Senior ")
+    const ghazi= new Employee("1000 ","Ghazi Samer ","Administration ","Senior ",)
     const lana= new Employee("1001 ","Lana Ali	","Finance ","Senior ")
     const tamara= new Employee("1002 ","Tamara Ayoub ","Marketing ","Senior ")
     const safi= new Employee("1003 ","Safi Walid ","Administration ","Mid-Senior ")
@@ -52,18 +52,24 @@ console.log(allUsers)
       
     }
     
-    
+    Employee.prototype.image=function(){
+        if(this.name.trim().toLowerCase="Ghazi Samer"){
+            
+            
+        }
+    }
   
 
 Employee.prototype.addInfo=function(){
-    document.write("Emplyee Name:   "+this.name+"      "," &nbsp; &nbsp;   ,Employee Salary:   "+this.salary+"JOD&nbsp; &nbsp; <br><br>")
+    document.write("Name:   "+this.name+"      "+"-ID:"+this.identity+"-Department:"+this.department+"-level:"+this.level+" &nbsp; &nbsp;   -"+this.salary+"JOD&nbsp; &nbsp; <br><br>")
+
 } 
 
  for (var i=0; i<allUsers.length;i++){
     allUsers[i].salary();
     allUsers[i].addInfo();
  }
-// 
+
 
 function randomIntFromInterval(min, max) { 
     return Math.floor(Math.random() * (max - min + 1) + min)

@@ -17,13 +17,13 @@ function Employee(identity,name,department,level,image){
 
 
 
-    const ghazi= new Employee("1000 ","Ghazi Samer ","Administration ","Senior ","assits/Ghazi.jpg")
-    const lana= new Employee("1001 ","Lana Ali	","Finance ","Senior ","assits/Lana.jpg")
-    const tamara= new Employee("1002 ","Tamara Ayoub ","Marketing ","Senior ","assits/Tamara.jpg")
-    const safi= new Employee("1003 ","Safi Walid ","Administration ","Mid-Senior ","assits/Safi.jpg")
-    const omar= new Employee("1004 ","Omar Zaid	","Development ","Senior ","assits/Omar.jpg")
-    const rana= new Employee("1005 ","Rana Saleh ","Development ","JUNIOR     ","assits/Rana.jpg")
-    const hadi= new Employee("1006 ","Hadi Ahmad ","Finance ","Mid-Senior ", "assits/Ghazi.jpg")
+    const ghazi= new Employee("1000 ","Ghazi Samer ","Administration ","Senior ","./assits/Ghazi.jpg")
+    const lana= new Employee("1001 ","Lana Ali	","Finance ","Senior ","./assits/Lana.jpg")
+    const tamara= new Employee("1002 ","Tamara Ayoub ","Marketing ","Senior ","./assits/Tamara.jpg")
+    const safi= new Employee("1003 ","Safi Walid ","Administration ","Mid-Senior ","./assits/Safi.jpg")
+    const omar= new Employee("1004 ","Omar Zaid	","Development ","Senior ","./assits/Omar.jpg")
+    const rana= new Employee("1005 ","Rana Saleh ","Development ","JUNIOR     ","./assits/Rana.jpg")
+    const hadi= new Employee("1006 ","Hadi Ahmad ","Finance ","Mid-Senior ", "./assits/Ghazi.jpg")
 
       
    
@@ -58,66 +58,64 @@ function Employee(identity,name,department,level,image){
   
 Employee.prototype.addInfo=function(){
 
-    let divEl=document.getElementById("hai");
-    const lele=divEl.textContent ="Name:   "+this.name+"      "+"-ID:"+this.identity+"-Department:"+this.department+"-level:"+this.level+" &nbsp; &nbsp;   -"+this.salary+"JOD&nbsp; &nbsp; <br><br>"
+    let div  = document.getElementById('container');
 
- const image= document.createElement("img")
- image.setAttribute("src",this.image);
- divEl.appendChild(image);
+    let divInner= document.createElement('div');
+    
+    div.setAttribute("class","container");
+    divInner.setAttribute("class","innerDivstyle");
 
- let divEl2=document.getElementById("hi");
- const lele2=divEl.textContent ="Name:   "+this.name+"      "+"-ID:"+this.identity+"-Department:"+this.department+"-level:"+this.level+" &nbsp; &nbsp;   -"+this.salary+"JOD&nbsp; &nbsp; <br><br>"
+    const imageinner= document.createElement("img")
 
-const image2= document.createElement("img2")
-image.setAttribute("src",this.image);
-divEl.appendChild(image);
+    imageinner.setAttribute("src",this.image);
+    imageinner.setAttribute("class","img");
 
-      
-    const pEl=document.createElement("p");
-    pEl.textContent="Name:   "+this.image+this.name+"      "+"-ID:"+this.identity+"-Department:"+this.department+"-level:"+this.level+" &nbsp; &nbsp;   -"+this.salary+"JOD"+ this.image
-    divEl.appendChild(pEl)
-  console.log(divEl)
+    divInner.appendChild(imageinner);
+
+    let b  = document.createElement('br');
+    divInner.appendChild(b);
+    
+    
+    let nameEmp  = document.createElement('span');
+    
+    nameEmp = document.createTextNode(`Name : ${this.name}`);  
+   
+    let br1  = document.createElement('br');
+    divInner.appendChild(nameEmp);
+    divInner.appendChild(br1);
+
+    let idenEmp  = document.createElement('span');
+    idenEmp = document.createTextNode(`Id : ${this.identity}`);    
+    let br2  = document.createElement('br');
+    divInner.appendChild(idenEmp);
+    divInner.appendChild(br2);
+
+    
+    let levelEmp  = document.createElement('span');
+    levelEmp = document.createTextNode(`Level : ${this.level}`);    
+    let br3  = document.createElement('br');
+    divInner.appendChild(levelEmp);
+    divInner.appendChild(br3);
+
+
   
-} 
-console.log(this.image)
+    div.appendChild(divInner);
 
+
+
+}
+
+    
 
  for (var i=0; i<allUsers.length;i++){
     allUsers[i].salary();
     allUsers[i].addInfo();
     
-
  }
+
 
 
 function randomIntFromInterval(min, max) { 
     return Math.floor(Math.random() * (max - min + 1) + min)
     
   }
-  //         imgGhazi.src="https://github.com/LTUC/new-prep-course-std/blob/main/Day10/Task/assets/Ghazi.jpg?raw=true"
-//         divEl.appendChild(imgGhazi);
-//     }
-    
-// else if(this.name.toLowerCase.trim()=="lana ali"){
-//     const imgLana=document.createElement("img")
-//     imgLana.src="https://github.com/LTUC/new-prep-course-std/blob/main/Day10/Task/assets/Lana.jpg?raw=true"
-//     divEl.appendChild(imgLana);
-// }
-    // Employee.prototype.addimg=function(){
-//     if(this.name.toLowerCase.trim()=="Ghazi Samer"){
-//         this.image=
-//     }
-// }
-    // const imgEl=document.createElement("img")
-    // imgEl.src="https://physicsworld.com/wp-content/uploads/2019/05/Sunshine.jpg";
-    // imgEl.alt="sun"
-    // const divEl=document.getElementsByTagName("div")
-    
-    // Employee.prototype.image=function(){
-    //     if(this.name.trim().toLowerCase="Ghazi Samer"){
-            
-            
-    //     }
-    // }
-        // divEl.appendChild(lele)
-//     if(this.name.toLowerCase.trim()=="ghazi samer"){
